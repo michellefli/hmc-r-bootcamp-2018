@@ -1,0 +1,24 @@
+---
+title: "HMC-R-Bootcamp"
+author: "Michelle Li"
+date: "5/29/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# homework 1: wrap-up exercises
+
+# 3
+hflightsSub <- subset(hflights, hflights$ArrDelay > 600)
+
+# 4
+hflights$ArrDelay[hflights$ArrDelay < 300]
+
+# 5
+library(ggplot2)
+hflights$ArrDelay[hflights$ArrDelay < 0] <- 0
+ggplot(data=hflights, aes(hflights$ArrDelay)) + geom_histogram() + labs(title="Histogram for Arrival Delays")+labs(x="Arrival Delay (min)", y="Count") + xlim(c(0,60))
+
